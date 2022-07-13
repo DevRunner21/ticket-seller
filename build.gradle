@@ -18,16 +18,20 @@ dependencies {
     runtimeOnly 'mysql:mysql-connector-java'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    implementation('org.projectlombok:lombok')
+    testImplementation('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+
 //    # redis 의존성
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
 //    # test를 위한 embedded redis
     testImplementation group: 'it.ozimov', name: 'embedded-redis', version: '0.7.2'
 
-    implementation('org.projectlombok:lombok')
-    testImplementation('org.projectlombok:lombok')
-    annotationProcessor('org.projectlombok:lombok')
-    testAnnotationProcessor('org.projectlombok:lombok')
+    // redisson
+    implementation 'org.redisson:redisson-spring-boot-starter:3.16.3'
+
 }
 
 tasks.named('test') {
