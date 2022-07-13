@@ -17,5 +17,13 @@ spring:
     password: 1234
     url: jdbc:mysql://localhost:3306/ticket_seller?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
 
+  redis:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+    port: 6379
+    host: 127.0.0.1
 server:
   port: 8080
