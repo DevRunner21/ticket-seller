@@ -30,4 +30,19 @@ class RedissonTicketHistoryServiceTest {
         service.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
     }
 
+
+    @Test
+    void buyTicket2() throws InterruptedException {
+        ExecutorService service = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
+
+        for (int i = 0; i < THREAD_POOL_SIZE; i++) {
+            service.execute(() -> {
+                ticketHistoryService.buyTicket2(1L, 1L);
+            });
+        }
+
+        service.shutdown();
+        service.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+    }
+
 }
