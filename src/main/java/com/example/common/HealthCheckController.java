@@ -11,7 +11,7 @@ public class HealthCheckController {
 
 	@GetMapping("/ping")
 	private ResponseEntity<String> ping() {
-		return ResponseEntity.ok("pong");
+		return ResponseEntity.ok("pong pong");
 	}
 
 }
