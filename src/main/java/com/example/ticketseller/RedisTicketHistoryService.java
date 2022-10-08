@@ -22,7 +22,7 @@ public class RedisTicketHistoryService {
     public void buyTicket(Long userId, Long ticketId) {
 
         String name = String.format("ticket:%d:%d", ticketId, userId);
-        boolean isNewRequest = redisTemplate.opsForValue().setIfAbsent(name, "true", 1, TimeUnit.MINUTES);
+        boolean isNewRequest = Boolean.TRUE.equals(redisTemplate.opsForValue().setIfAbsent(name, "true", 1, TimeUnit.MINUTES));
 
         if (!isNewRequest) {
             log.info("동일 요청이 여러 번 발생");
