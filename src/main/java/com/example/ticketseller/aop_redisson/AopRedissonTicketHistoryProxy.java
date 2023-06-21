@@ -1,5 +1,6 @@
 package com.example.ticketseller.aop_redisson;
 
+import com.pawn.autodistributedlock.DistributedLock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

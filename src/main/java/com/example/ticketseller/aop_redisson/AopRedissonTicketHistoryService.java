@@ -14,7 +14,6 @@ public class AopRedissonTicketHistoryService {
 
     private final TicketHistoryRepository ticketHistoryRepository;
 
-//    @DistributedLock(key = "#ticketId")
     @Transactional
     public void buyTicket(Long userId, Long ticketId) {
         Long count = ticketHistoryRepository.countTicketHistoriesByUserIdAndTicketId(userId, ticketId);

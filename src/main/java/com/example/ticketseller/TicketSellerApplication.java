@@ -1,12 +1,10 @@
 package com.example.ticketseller;
 
-import com.example.ticketseller.aop_redisson.EnableDistritbutedLock;
+import com.pawn.autodistributedlock.EnableDistributedLock;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
 
-@EnableCaching
-@EnableDistritbutedLock
+@EnableDistributedLock
 @SpringBootApplication
 public class TicketSellerApplication {
 
