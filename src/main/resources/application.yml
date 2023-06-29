@@ -10,12 +10,22 @@ spring:
       hibernate:
         format_sql: true
         default_batch_fetch_size: 100
-    show-sql: true
+        #      show-sql: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 1234
-    url: jdbc:mysql://localhost:3306/ticket_seller?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3308/db_ticket_seller?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
 
 server:
   port: 8080
